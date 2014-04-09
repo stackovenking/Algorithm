@@ -1,0 +1,13 @@
+//递归计算1到n的和
+int calculate(int m)
+{
+	if(0 == m)
+	{
+		return 0;
+	}
+	else
+	{
+		return calculate(m-1)+m;
+	}
+
+}
