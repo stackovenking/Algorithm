@@ -1,0 +1,21 @@
+//arr[low...high]
+void InsertSort(TYPE *arr, int low, int high)
+{
+	int cnt_i,cnt_j;
+	TYPE temp;
+	assert((arr != NULL)&&(low<=high));
+
+	for(cnt_i= low+1; cnt_i<=high; cnt_i++)
+	{
+		temp = *(arr+cnt_i);
+		cnt_j = cnt_i - 1;
+		//与已排序的数逐一比较，大于temp时，该数移后
+		while((cnt_j>=low)&&(*(arr+cnt_j)>temp))
+		{
+			*(arr+cnt_j+1) = *(arr+cnt_j);
+			cnt_j--;
+		}
+		*(arr+cnt_j+1) = temp;
+	}
+
+}
